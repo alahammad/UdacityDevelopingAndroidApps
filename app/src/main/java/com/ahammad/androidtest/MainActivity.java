@@ -49,7 +49,7 @@ public class MainActivity extends ActionBarActivity   implements NotesFragment.C
             PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0,
                     intent, PendingIntent.FLAG_CANCEL_CURRENT);
             am.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(),
-                    (1 * 60 * 1000), pendingIntent);
+                    (min * 60 * 1000), pendingIntent);
         }
 
     }
