@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Notes</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_add">Add</string>
+    <string name="add_note">Add</string>
+    <string name="delete_note_msg">Are you sure you want to delete note ?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="action_share">Share</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="pref_reminder_key"  translatable="false">reminder_key</string>
+    <string name="pref_title"  translatable="false">Reminder time in minute</string>
+
+    <string name="pref_allow_reminder_key">allow_reminder_key</string>
+    <string name="pref_allow_reminder_title">Do you want to allow reminder ?</string>
+
+    <string name="alarm_service_label">Alarm</string>
+</resources>

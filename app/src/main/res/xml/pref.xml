@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:inputType="number"
+        android:defaultValue="15"
+        android:title="@string/pref_title"
+        android:singleLine="true"
+        android:key="@string/pref_reminder_key">
+
+        </EditTextPreference>
+
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:title="@string/pref_allow_reminder_title"
+        android:key="@string/pref_allow_reminder_key">
+
+        </CheckBoxPreference>
+</PreferenceScreen>
