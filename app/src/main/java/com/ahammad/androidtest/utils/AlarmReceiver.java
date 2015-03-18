@@ -9,7 +9,6 @@ import android.database.Cursor;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.ahammad.androidtest.MainActivity;
 import com.ahammad.androidtest.R;
@@ -27,7 +26,6 @@ public class AlarmReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        Log.v("hammad","R : " + Utility.isAllowedReminder(context.getApplicationContext()));
         if (Utility.isAllowedReminder(context)) {
             String msg = getMessage(context);
             if (!TextUtils.isEmpty(msg)) {
@@ -47,7 +45,6 @@ public class AlarmReceiver extends BroadcastReceiver {
                                 0,
                                 PendingIntent.FLAG_UPDATE_CURRENT
                         );
-
                 mBuilder.setContentIntent(resultPendingIntent);
 
                 NotificationManager mNotificationManager =
