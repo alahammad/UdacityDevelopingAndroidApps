@@ -56,6 +56,7 @@ public class SettingsActivity extends PreferenceActivity implements Preference.O
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         String stringValue = newValue.toString();
+        if (preference.getKey().equals(getString(R.string.pref_reminder_key)))
         preference.setSummary(stringValue);
         return true;
     }
@@ -68,15 +69,12 @@ public class SettingsActivity extends PreferenceActivity implements Preference.O
         // Trigger the listener immediately with the preference's
         // current value.
 
-        if (preference.getKey().equals(getString(R.string.pref_allow_reminder_key))){
+        if (preference.getKey().equals(getString(R.string.pref_reminder_key))){
             onPreferenceChange(preference,
-                    PreferenceManager
-                            .getDefaultSharedPreferences(preference.getContext())
-                            .getBoolean(preference.getKey(), true));
-        }else
-        onPreferenceChange(preference,
                 PreferenceManager
                         .getDefaultSharedPreferences(preference.getContext())
                         .getString(preference.getKey(), ""));
+        }
+
     }
 }

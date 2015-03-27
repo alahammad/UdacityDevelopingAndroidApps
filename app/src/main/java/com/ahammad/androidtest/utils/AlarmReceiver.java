@@ -31,7 +31,6 @@ public class AlarmReceiver extends BroadcastReceiver {
             if (!TextUtils.isEmpty(msg)) {
                 NotificationCompat.Builder mBuilder =
                         new NotificationCompat.Builder(context)
-//                            .setColor(resources.getColor(R.color.sunshine_light_blue))
                                 .setSmallIcon(R.drawable.attention_icon)
                                 .setContentTitle(context.getString(R.string.app_name))
                                 .setStyle(new NotificationCompat.BigTextStyle()
@@ -49,7 +48,6 @@ public class AlarmReceiver extends BroadcastReceiver {
 
                 NotificationManager mNotificationManager =
                         (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-                // WEATHER_NOTIFICATION_ID allows you to update the notification later on.
                 mNotificationManager.notify(0, mBuilder.build());
             }
         }

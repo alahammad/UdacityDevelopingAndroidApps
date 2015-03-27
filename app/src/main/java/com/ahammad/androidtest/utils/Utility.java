@@ -3,7 +3,6 @@ package com.ahammad.androidtest.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.util.Log;
 
 import com.ahammad.androidtest.R;
 
@@ -20,7 +19,6 @@ public class Utility {
     public static boolean isAllowedReminder (Context context){
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         boolean isAllow =prefs.getBoolean(context.getString(R.string.pref_allow_reminder_key),true);
-        Log.v("hammad","isAllow : "+isAllow);
         return isAllow;
     }
 }

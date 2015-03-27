@@ -8,8 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.ahammad.androidtest.R;
-
 import java.text.SimpleDateFormat;
 
 /**
@@ -40,6 +38,7 @@ public class NotesAdapter extends CursorAdapter {
 
         return view;
     }
+
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {

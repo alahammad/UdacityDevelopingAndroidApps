@@ -3,6 +3,7 @@ package com.ahammad.androidtest.fragments;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -17,6 +18,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.ahammad.androidtest.MainActivity;
 import com.ahammad.androidtest.NotesAdapter;
 import com.ahammad.androidtest.R;
 import com.ahammad.androidtest.database.Note;
@@ -113,6 +115,15 @@ public class NotesFragment extends Fragment  implements LoaderManager.LoaderCall
                     @Override
                     public void onClick(DialogInterface arg0, int arg1) {
                         getActivity().getContentResolver().delete(NoteProvider.URI_NOTES,Note.COL_ID +  " = "+noteId ,null);
+                        Cursor cursor = getActivity().getContentResolver().query(NoteProvider.URI_NOTES,null,null,null,null);
+                        // because after delete i need to refresh
+                        // i found this way, if count-1 ==0 refresh activity
+                        int count = mAdapter.getCount();
+                        if(count-1 ==0) {
+                            Intent intent = new Intent(getActivity(), MainActivity.class);
+                            startActivity(intent);
+                            getActivity().finish();
+                        }
                     }
                 });
         alertDialog.setNegativeButton(R.string.no,
